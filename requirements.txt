@@ -1,0 +1,5 @@
+numpy~=1.26.4
+torch~=2.2.2
+scapy~=2.5.0
+pillow~=10.3.0
+matplotlib~=3.8.3
