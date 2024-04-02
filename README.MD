@@ -1,4 +1,4 @@
-尝试复现论文![GLADS: A global-local attention data selection model for multimodal multitask encrypted traffic classification of IoT](https://www.sciencedirect.com/science/article/pii/S138912862300097X)
+尝试复现论文[GLADS: A global-local attention data selection model for multimodal multitask encrypted traffic classification of IoT](https://www.sciencedirect.com/science/article/pii/S138912862300097X)
 
 # 数据集
 

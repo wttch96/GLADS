@@ -1,5 +1,6 @@
 from torch import nn, Tensor
 
+from layers.global_local_attention import GlobalLocalAttentionLayer
 from layers.tswe import TSWELayer
 from layers.exchange import ExchangeLayer
 
@@ -12,5 +13,10 @@ class GRADS(nn.Module):
 
         self.exchange = ExchangeLayer()
 
+        self.global_local_attention = GlobalLocalAttentionLayer()
+
     def forward(self, x: Tensor) -> Tensor:
-        return self.exchange(self.tswe(x))
+        x = self.tswe(x)
+        x = self.exchange(x)
+        x = self.global_local_attention(x)
+        return x

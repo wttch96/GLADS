@@ -57,6 +57,8 @@ class ExchangeLayer(nn.Module):
     交换层。
 
     使用 7 个基础交换层块，和一个 Merge (1D-CNN) 来融合 token 数据。
+
+    本文的输出维度是: [batch, n, 96], n 最大为 259。
     """
 
     def __init__(self, filters=96, block_num=7):
