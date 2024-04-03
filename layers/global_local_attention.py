@@ -59,13 +59,13 @@ class GlobalLocalAttentionHead(nn.Module):
     def _try_init_parameter(self, x: Tensor):
         token_size = x.shape[1]
         if self.W_Q is None:
-            self.W_Q = nn.Parameter(tensor_to(*[torch.zeros(token_size, token_size)])[0])
+            self.W_Q = nn.Parameter(tensor_to(torch.zeros(token_size, token_size)))
             xavier_normal_(self.W_Q)
         if self.W_V is None:
-            self.W_V = nn.Parameter(tensor_to(*[torch.zeros(token_size, token_size)])[0])
+            self.W_V = nn.Parameter(tensor_to(torch.zeros(token_size, token_size)))
             xavier_normal_(self.W_V)
         if self.M is None:
-            self.M = torch.triu(tensor_to(*[torch.ones((token_size, token_size))])[0] * -torch.inf, 1)
+            self.M = torch.triu(tensor_to(torch.ones((token_size, token_size))) * -torch.inf, 1)
 
 
 class GlobalLocalAttentionLayer(nn.Module):

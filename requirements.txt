@@ -3,3 +3,4 @@ torch~=2.2.2
 scapy~=2.5.0
 pillow~=10.3.0
 matplotlib~=3.8.3
+wttch-train-helper~=0.0.22

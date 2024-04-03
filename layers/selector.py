@@ -17,7 +17,7 @@ class Selector(nn.Module):
         # TODO 怎么保证输入输出一致呢？训练时选择，其他都置 0？ batch * n * w 和 batch * 1 * w 维度都不一样
 
         # 文章中说，测试阶段保留所有的分类结果，那这里就是只选择一个
-        if self.train():
+        if self.training:
             # 训练阶段，随机选择数据进行
             idx = torch.randint(x.shape[1], (x.shape[0],))
             selected = x[torch.arange(x.shape[0]), idx, :]
