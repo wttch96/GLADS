@@ -13,4 +13,4 @@ print(data.shape)
 net = GRADS().to(device="mps")
 
 data = net(data)
-print(data.shape)
+print(data)
